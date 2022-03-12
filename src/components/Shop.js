@@ -1,20 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
+import booksInfo from "../books";
 
 const Shop = () => {
   const [books, setBooks] = useState([]);
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    setBooks([
-      {
-        title: "test book 1",
-        img: "",
-        count: 1,
-        price: "25",
-        id: "1",
-      },
-    ]);
+    setBooks(booksInfo);
   }, []);
 
   function countOnChange(newCount, id) {
@@ -72,27 +65,30 @@ const Shop = () => {
   const cartTotal =
     cart.length > 0 ? cart.reduce((prev, next) => prev + +next.count, 0) : 0;
 
-  const testBook = books[0];
+  const booksList =
+    books.length > 0
+      ? books.map((book) => (
+          <Card
+            key={book.id}
+            title={book.title}
+            img={book.img}
+            count={book.count}
+            price={book.price}
+            id={book.id}
+            onChangeHandler={countOnChange}
+            addBtnHandler={incrementCount}
+            subBtnHandler={decrementCount}
+            addCartBtnHandler={addBookToCart}
+          />
+        ))
+      : null;
+
   return (
     <section className="shop">
       <section role="status" className="cart">
         Items in Cart: {cartTotal}
       </section>
-      <section className="book-container">
-        {testBook && (
-          <Card
-            title={testBook.title}
-            img={testBook.img}
-            count={testBook.count}
-            price={testBook.price}
-            id={testBook.id}
-            onChangeHandler={countOnChange}
-            addBtnHandler={() => incrementCount(testBook.id)}
-            subBtnHandler={decrementCount}
-            addCartBtnHandler={addBookToCart}
-          />
-        )}
-      </section>
+      <section className="book-container">{booksList}</section>
     </section>
   );
 };

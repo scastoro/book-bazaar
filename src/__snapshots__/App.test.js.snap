@@ -234,6 +234,191 @@ exports[`Shop component should render correctly 1`] = `
           Add to cart
         </button>
       </section>
+      <section
+        class="card"
+      >
+        <h3
+          class="card-heading"
+        >
+          test book 2
+        </h3>
+        <img
+          alt="test book 2"
+          class="card image"
+          src=""
+        />
+        <p
+          class="card-price"
+        >
+          25
+        </p>
+        <label
+          for="price"
+        >
+          Price:
+        </label>
+        <button>
+          -
+        </button>
+        <input
+          class="card-price"
+          value="1"
+        />
+        <button>
+          +
+        </button>
+        <button>
+          Add to cart
+        </button>
+      </section>
+      <section
+        class="card"
+      >
+        <h3
+          class="card-heading"
+        >
+          test book 3
+        </h3>
+        <img
+          alt="test book 3"
+          class="card image"
+          src=""
+        />
+        <p
+          class="card-price"
+        >
+          25
+        </p>
+        <label
+          for="price"
+        >
+          Price:
+        </label>
+        <button>
+          -
+        </button>
+        <input
+          class="card-price"
+          value="1"
+        />
+        <button>
+          +
+        </button>
+        <button>
+          Add to cart
+        </button>
+      </section>
+      <section
+        class="card"
+      >
+        <h3
+          class="card-heading"
+        >
+          test book 4
+        </h3>
+        <img
+          alt="test book 4"
+          class="card image"
+          src=""
+        />
+        <p
+          class="card-price"
+        >
+          25
+        </p>
+        <label
+          for="price"
+        >
+          Price:
+        </label>
+        <button>
+          -
+        </button>
+        <input
+          class="card-price"
+          value="1"
+        />
+        <button>
+          +
+        </button>
+        <button>
+          Add to cart
+        </button>
+      </section>
+      <section
+        class="card"
+      >
+        <h3
+          class="card-heading"
+        >
+          test book 5
+        </h3>
+        <img
+          alt="test book 5"
+          class="card image"
+          src=""
+        />
+        <p
+          class="card-price"
+        >
+          25
+        </p>
+        <label
+          for="price"
+        >
+          Price:
+        </label>
+        <button>
+          -
+        </button>
+        <input
+          class="card-price"
+          value="1"
+        />
+        <button>
+          +
+        </button>
+        <button>
+          Add to cart
+        </button>
+      </section>
+      <section
+        class="card"
+      >
+        <h3
+          class="card-heading"
+        >
+          test book 6
+        </h3>
+        <img
+          alt="test book 6"
+          class="card image"
+          src=""
+        />
+        <p
+          class="card-price"
+        >
+          25
+        </p>
+        <label
+          for="price"
+        >
+          Price:
+        </label>
+        <button>
+          -
+        </button>
+        <input
+          class="card-price"
+          value="1"
+        />
+        <button>
+          +
+        </button>
+        <button>
+          Add to cart
+        </button>
+      </section>
     </section>
   </section>
 </div>

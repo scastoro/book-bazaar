@@ -40,37 +40,37 @@ describe("Shop component", () => {
 
   it("should update cart status on add to cart btn press", () => {
     render(<Shop />);
-    const addToCart = screen.getByRole("button", { name: "Add to cart" });
-    const cartStatus = screen.getByRole("status");
+    const addToCart = screen.getAllByRole("button", { name: "Add to cart" });
+    const cartStatus = screen.getAllByRole("status");
 
-    userEvent.click(addToCart);
-    expect(cartStatus.textContent).toBe("Items in Cart: 1");
+    userEvent.click(addToCart[0]);
+    expect(cartStatus[0].textContent).toBe("Items in Cart: 1");
   });
 
   it("should increment count input when plus btn pressed", () => {
     render(<Shop />);
-    const incrementBtn = screen.getByRole("button", { name: "+" });
-    const input = screen.getByRole("textbox");
+    const incrementBtn = screen.getAllByRole("button", { name: "+" });
+    const input = screen.getAllByRole("textbox");
 
-    userEvent.click(incrementBtn);
-    expect(input.value).toBe("2");
+    userEvent.click(incrementBtn[0]);
+    expect(input[0].value).toBe("2");
   });
 
   it("should decrement count input when minus btn pressed", () => {
     render(<Shop />);
-    const decrementBtn = screen.getByRole("button", { name: "-" });
-    const input = screen.getByRole("textbox");
+    const decrementBtn = screen.getAllByRole("button", { name: "-" });
+    const input = screen.getAllByRole("textbox");
 
-    userEvent.click(decrementBtn);
-    expect(input.value).toBe("0");
+    userEvent.click(decrementBtn[1]);
+    expect(input[1].value).toBe("0");
   });
 
   it("should update count input on keypress", () => {
     render(<Shop />);
-    const input = screen.getByRole("textbox");
+    const input = screen.getAllByRole("textbox");
 
-    userEvent.type(input, "{backspace}34");
-    expect(input.value).toBe("34");
+    userEvent.type(input[0], "{backspace}34");
+    expect(input[0].value).toBe("34");
   });
 });
 

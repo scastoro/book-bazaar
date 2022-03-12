@@ -23,7 +23,7 @@ const Card = ({
         value={count}
         onChange={(e) => onChangeHandler(e.target.value, id)}
       />
-      <button onClick={addBtnHandler}>+</button>
+      <button onClick={() => addBtnHandler(id)}>+</button>
       <button onClick={() => addCartBtnHandler(id)}>Add to cart</button>
     </section>
   );

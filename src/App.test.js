@@ -21,8 +21,8 @@ describe("App component", () => {
     expect(container).toMatchSnapshot();
   });
 });
-describe("should render correctly", () => {
-  it("renders Navbar", () => {
+describe("Navbar component", () => {
+  it("should render correctly", () => {
     const view = render(
       <MemoryRouter>
         <Navbar />
@@ -32,19 +32,45 @@ describe("should render correctly", () => {
   });
 });
 
-describe.skip("Shop component", () => {
-  it("should render Shop", () => {
+describe("Shop component", () => {
+  it("should render correctly", () => {
     const { container } = render(<Shop />);
     expect(container).toMatchSnapshot();
   });
 
   it("should update cart status on add to cart btn press", () => {
     render(<Shop />);
-    const { addToCart } = screen.getByRole("button", { name: "add to cart" });
-    const { cartStatus } = screen.getByRole("status");
+    const addToCart = screen.getByRole("button", { name: "Add to cart" });
+    const cartStatus = screen.getByRole("status");
 
     userEvent.click(addToCart);
-    expect(cartStatus).toBe(1);
+    expect(cartStatus.textContent).toBe("Items in Cart: 1");
+  });
+
+  it("should increment count input when plus btn pressed", () => {
+    render(<Shop />);
+    const incrementBtn = screen.getByRole("button", { name: "+" });
+    const input = screen.getByRole("textbox");
+
+    userEvent.click(incrementBtn);
+    expect(input.value).toBe("2");
+  });
+
+  it("should decrement count input when minus btn pressed", () => {
+    render(<Shop />);
+    const decrementBtn = screen.getByRole("button", { name: "-" });
+    const input = screen.getByRole("textbox");
+
+    userEvent.click(decrementBtn);
+    expect(input.value).toBe("0");
+  });
+
+  it("should update count input on keypress", () => {
+    render(<Shop />);
+    const input = screen.getByRole("textbox");
+
+    userEvent.type(input, "{backspace}34");
+    expect(input.value).toBe("34");
   });
 });
 

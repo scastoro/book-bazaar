@@ -31,49 +31,7 @@ exports[`App component should render correctly 1`] = `
 </div>
 `;
 
-exports[`Product Card Component should render correctly 1`] = `
-<div>
-  <section
-    class="card"
-  >
-    <h3
-      class="card-heading"
-    >
-      foo
-    </h3>
-    <img
-      alt="foo"
-      class="card image"
-      src=""
-    />
-    <p
-      class="card-price"
-    >
-      100
-    </p>
-    <label
-      for="price"
-    >
-      Price:
-    </label>
-    <button>
-      -
-    </button>
-    <input
-      class="card-price"
-      value="1"
-    />
-    <button>
-      +
-    </button>
-    <button>
-      Add to cart
-    </button>
-  </section>
-</div>
-`;
-
-exports[`should render correctly renders Navbar 1`] = `
+exports[`Navbar component should render correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -180,4 +138,103 @@ Object {
   "rerender": [Function],
   "unmount": [Function],
 }
+`;
+
+exports[`Product Card Component should render correctly 1`] = `
+<div>
+  <section
+    class="card"
+  >
+    <h3
+      class="card-heading"
+    >
+      foo
+    </h3>
+    <img
+      alt="foo"
+      class="card image"
+      src=""
+    />
+    <p
+      class="card-price"
+    >
+      100
+    </p>
+    <label
+      for="price"
+    >
+      Price:
+    </label>
+    <button>
+      -
+    </button>
+    <input
+      class="card-price"
+      value="1"
+    />
+    <button>
+      +
+    </button>
+    <button>
+      Add to cart
+    </button>
+  </section>
+</div>
+`;
+
+exports[`Shop component should render correctly 1`] = `
+<div>
+  <section
+    class="shop"
+  >
+    <section
+      class="cart"
+      role="status"
+    >
+      Items in Cart: 
+      0
+    </section>
+    <section
+      class="book-container"
+    >
+      <section
+        class="card"
+      >
+        <h3
+          class="card-heading"
+        >
+          test book 1
+        </h3>
+        <img
+          alt="test book 1"
+          class="card image"
+          src=""
+        />
+        <p
+          class="card-price"
+        >
+          25
+        </p>
+        <label
+          for="price"
+        >
+          Price:
+        </label>
+        <button>
+          -
+        </button>
+        <input
+          class="card-price"
+          value="1"
+        />
+        <button>
+          +
+        </button>
+        <button>
+          Add to cart
+        </button>
+      </section>
+    </section>
+  </section>
+</div>
 `;

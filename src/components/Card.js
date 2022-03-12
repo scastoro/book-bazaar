@@ -17,7 +17,7 @@ const Card = ({
       <img className="card image" src={img} alt={title} />
       <p className="card-price">{price}</p>
       <label htmlFor="price">Price:</label>
-      <button onClick={subBtnHandler}>-</button>
+      <button onClick={() => subBtnHandler(id)}>-</button>
       <input
         className="card-price"
         value={count}

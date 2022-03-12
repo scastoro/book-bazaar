@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component renders App 1`] = `
+exports[`App component should render correctly 1`] = `
 <div>
   <header>
     <img
@@ -31,7 +31,46 @@ exports[`App component renders App 1`] = `
 </div>
 `;
 
-exports[`App component renders Navbar 1`] = `
+exports[`Product Card Component should render correctly 1`] = `
+<div>
+  <section
+    class="card"
+  >
+    <h3
+      class="card-heading"
+    >
+      foo
+    </h3>
+    <img
+      alt="foo"
+      class="card image"
+      src=""
+    />
+    <p
+      class="card-price"
+    >
+      100
+    </p>
+    <label
+      for="price"
+    >
+      Price:
+    </label>
+    <button>
+      -
+    </button>
+    <input
+      class="card-price"
+      value="1"
+    />
+    <button>
+      +
+    </button>
+  </section>
+</div>
+`;
+
+exports[`should render correctly renders Navbar 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

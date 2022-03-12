@@ -80,6 +80,15 @@ describe("Product Card Component", () => {
     expect(onClickMock).toHaveBeenCalledTimes(1);
   });
 
+  it("should call addCartBtnHandler", () => {
+    const onClickMock = jest.fn();
+    render(<Card addCartBtnHandler={onClickMock} />);
+    const subBtn = screen.getByRole("button", { name: "Add to cart" });
+    userEvent.click(subBtn);
+
+    expect(onClickMock).toHaveBeenCalledTimes(1);
+  });
+
   it("should call onChange the correct number of times", () => {
     const onChangeMock = jest.fn();
     render(<Card onChangeHandler={onChangeMock} />);

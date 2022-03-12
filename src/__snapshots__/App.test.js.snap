@@ -66,6 +66,9 @@ exports[`Product Card Component should render correctly 1`] = `
     <button>
       +
     </button>
+    <button>
+      Add to cart
+    </button>
   </section>
 </div>
 `;

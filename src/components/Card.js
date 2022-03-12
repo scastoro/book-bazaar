@@ -9,6 +9,7 @@ const Card = ({
   onChangeHandler,
   addBtnHandler,
   subBtnHandler,
+  addCartBtnHandler,
 }) => {
   return (
     <section key={id} className="card">
@@ -23,6 +24,7 @@ const Card = ({
         onChange={(e) => onChangeHandler(e.target.value, id)}
       />
       <button onClick={addBtnHandler}>+</button>
+      <button onClick={() => addCartBtnHandler(id)}>Add to cart</button>
     </section>
   );
 };

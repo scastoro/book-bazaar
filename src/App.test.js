@@ -69,25 +69,33 @@ describe("Shop component", () => {
 
   it("should increment count input when plus btn pressed", () => {
     render(<Shop />);
-    const incrementBtn = screen.getAllByRole("button", { name: "+" });
-    const input = screen.getAllByRole("textbox");
+    const addToCart = screen.getAllByRole("button", { name: "Add to cart" });
+    userEvent.click(addToCart[0]);
+    const goToCart = screen.getByRole("button", { name: "Go to cart" });
+    userEvent.click(goToCart);
+    const incrementBtn = screen.getByRole("button", { name: "+" });
+    const input = screen.getAllByRole("spinbutton");
 
-    userEvent.click(incrementBtn[0]);
+    userEvent.click(incrementBtn);
     expect(input[0].value).toBe("2");
   });
 
   it("should decrement count input when minus btn pressed", () => {
     render(<Shop />);
-    const decrementBtn = screen.getAllByRole("button", { name: "-" });
-    const input = screen.getAllByRole("textbox");
+    const addToCart = screen.getAllByRole("button", { name: "Add to cart" });
+    userEvent.click(addToCart[0]);
+    const goToCart = screen.getByRole("button", { name: "Go to cart" });
+    userEvent.click(goToCart);
+    const decrementBtn = screen.getByRole("button", { name: "-" });
+    const input = screen.getAllByRole("spinbutton");
 
-    userEvent.click(decrementBtn[1]);
-    expect(input[1].value).toBe("0");
+    userEvent.click(decrementBtn);
+    expect(input[0].value).toBe("0");
   });
 
   it("should update count input on keypress", () => {
     render(<Shop />);
-    const input = screen.getAllByRole("textbox");
+    const input = screen.getAllByRole("spinbutton");
 
     userEvent.type(input[0], "{backspace}34");
     expect(input[0].value).toBe("34");
@@ -132,7 +140,7 @@ describe("Product Card Component", () => {
   it("should call onChange the correct number of times", () => {
     const onChangeMock = jest.fn();
     render(<Card onChangeHandler={onChangeMock} />);
-    const input = screen.getByRole("textbox");
+    const input = screen.getByRole("spinbutton");
 
     userEvent.type(input, "123");
 
@@ -142,7 +150,7 @@ describe("Product Card Component", () => {
   it("should call onChange with the correct argument(s) on each input", function () {
     const onChangeMock = jest.fn();
     render(<Card id={cardProps.id} onChangeHandler={onChangeMock} />);
-    const input = screen.getByRole("textbox");
+    const input = screen.getByRole("spinbutton");
 
     userEvent.type(input, "12");
 

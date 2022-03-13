@@ -262,10 +262,17 @@ exports[`Product Card Component should render correctly 1`] = `
       100
     </p>
     <label
-      for="price"
+      class="card-label"
+      for="quantity"
     >
-      Price:
+      Quantity:
     </label>
+    <input
+      class="card-input"
+      id="quantity"
+      type="number"
+      value="1"
+    />
     <button>
       Add to cart
     </button>
@@ -312,10 +319,17 @@ exports[`Shop component should render correctly 1`] = `
           25
         </p>
         <label
-          for="price"
+          class="card-label"
+          for="quantity"
         >
-          Price:
+          Quantity:
         </label>
+        <input
+          class="card-input"
+          id="quantity"
+          type="number"
+          value="1"
+        />
         <button>
           Add to cart
         </button>
@@ -339,10 +353,17 @@ exports[`Shop component should render correctly 1`] = `
           25
         </p>
         <label
-          for="price"
+          class="card-label"
+          for="quantity"
         >
-          Price:
+          Quantity:
         </label>
+        <input
+          class="card-input"
+          id="quantity"
+          type="number"
+          value="1"
+        />
         <button>
           Add to cart
         </button>
@@ -366,10 +387,17 @@ exports[`Shop component should render correctly 1`] = `
           25
         </p>
         <label
-          for="price"
+          class="card-label"
+          for="quantity"
         >
-          Price:
+          Quantity:
         </label>
+        <input
+          class="card-input"
+          id="quantity"
+          type="number"
+          value="1"
+        />
         <button>
           Add to cart
         </button>
@@ -393,10 +421,17 @@ exports[`Shop component should render correctly 1`] = `
           25
         </p>
         <label
-          for="price"
+          class="card-label"
+          for="quantity"
         >
-          Price:
+          Quantity:
         </label>
+        <input
+          class="card-input"
+          id="quantity"
+          type="number"
+          value="1"
+        />
         <button>
           Add to cart
         </button>
@@ -420,10 +455,17 @@ exports[`Shop component should render correctly 1`] = `
           25
         </p>
         <label
-          for="price"
+          class="card-label"
+          for="quantity"
         >
-          Price:
+          Quantity:
         </label>
+        <input
+          class="card-input"
+          id="quantity"
+          type="number"
+          value="1"
+        />
         <button>
           Add to cart
         </button>
@@ -447,10 +489,17 @@ exports[`Shop component should render correctly 1`] = `
           25
         </p>
         <label
-          for="price"
+          class="card-label"
+          for="quantity"
         >
-          Price:
+          Quantity:
         </label>
+        <input
+          class="card-input"
+          id="quantity"
+          type="number"
+          value="1"
+        />
         <button>
           Add to cart
         </button>

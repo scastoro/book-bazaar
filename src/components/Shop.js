@@ -13,7 +13,7 @@ const Shop = () => {
     setBooks(booksInfo);
   }, []);
 
-  function countOnChange(newCount, id) {
+  function setCountOnChange(newCount, id) {
     setCart((prevCart) =>
       prevCart.map((product) => {
         if (product.id === id) {
@@ -28,6 +28,20 @@ const Shop = () => {
     );
   }
 
+  function bookChangeHandler(newCount, id) {
+    setBooks((prevBooks) =>
+      prevBooks.map((book) => {
+        if (book.id === id) {
+          return {
+            ...book,
+            count: newCount,
+          };
+        } else {
+          return book;
+        }
+      })
+    );
+  }
   function decrementCount(id) {
     setCart((prevCart) =>
       prevCart.map((product) => {
@@ -105,6 +119,7 @@ const Shop = () => {
             count={book.count}
             price={book.price}
             id={book.id}
+            onChangeHandler={bookChangeHandler}
             addCartBtnHandler={addBookToCart}
           />
         ))
@@ -124,7 +139,7 @@ const Shop = () => {
           total={orderTotal}
           subBtnHandler={decrementCount}
           addBtnHandler={incrementCount}
-          onChangeHandler={countOnChange}
+          onChangeHandler={setCountOnChange}
         />
       )}
       <section className="book-container">{booksList}</section>

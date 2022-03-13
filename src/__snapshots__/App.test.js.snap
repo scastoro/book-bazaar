@@ -35,6 +35,7 @@ exports[`Cart component should render correctly 1`] = `
 <div>
   <section
     class="cart"
+    role="dialog"
   >
     <h3>
       Shopping Cart
@@ -128,6 +129,16 @@ exports[`Cart component should render correctly 1`] = `
     >
       Order total: $
     </p>
+    <button
+      class="checkout-btn"
+    >
+      Checkout
+    </button>
+    <button
+      class="close-btn"
+    >
+      Close
+    </button>
   </section>
 </div>
 `;
@@ -297,6 +308,7 @@ exports[`Shop component should render correctly 1`] = `
     >
       Go to cart
     </button>
+    <span />
     <section
       class="book-container"
     >

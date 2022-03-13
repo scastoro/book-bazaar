@@ -6,6 +6,7 @@ const Cart = ({
   onChangeHandler,
   addBtnHandler,
   subBtnHandler,
+  toggleCartHandler,
 }) => {
   const productsList = products.map((product) => (
     <section key={product.id} className="item-list">
@@ -38,10 +39,14 @@ const Cart = ({
   ));
 
   return (
-    <section className="cart">
+    <section role="dialog" className="cart">
       <h3>Shopping Cart</h3>
       <section className="cart-items">{productsList}</section>
       <p className="total">Order total: ${total}</p>
+      <button className="checkout-btn">Checkout</button>
+      <button className="close-btn" onClick={toggleCartHandler}>
+        Close
+      </button>
     </section>
   );
 };

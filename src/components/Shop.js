@@ -146,6 +146,7 @@ const Shop = () => {
             subBtnHandler={decrementCount}
             addBtnHandler={incrementCount}
             onChangeHandler={setCountOnChange}
+            toggleCartHandler={showCartHandler}
           />
         )}
       </CSSTransitionGroup>

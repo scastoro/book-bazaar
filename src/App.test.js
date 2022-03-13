@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 import Navbar from "./components/Navbar";
@@ -111,6 +111,19 @@ describe("Shop component", () => {
     const cartTotal = screen.getByText("Order total", { exact: false });
 
     expect(cartTotal.textContent).toBe("Order total: $50");
+  });
+
+  it("should unmount cart when close button pressed", async () => {
+    render(<Shop />);
+    const goToCart = screen.getByRole("button", { name: "Go to cart" });
+    userEvent.click(goToCart);
+    const cart = screen.getByRole("dialog");
+    const closeCart = screen.getByRole("button", { name: "Close" });
+    userEvent.click(closeCart);
+
+    await waitFor(() => {
+      expect(cart).not.toBeInTheDocument();
+    });
   });
 });
 

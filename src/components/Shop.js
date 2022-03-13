@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { CSSTransitionGroup } from "react-transition-group";
 import Card from "./Card";
 import Cart from "./Cart";
 import booksInfo from "../books";
@@ -133,15 +134,21 @@ const Shop = () => {
       <button className="show-cart" onClick={showCartHandler}>
         Go to cart
       </button>
-      {showCart && (
-        <Cart
-          products={cart}
-          total={orderTotal}
-          subBtnHandler={decrementCount}
-          addBtnHandler={incrementCount}
-          onChangeHandler={setCountOnChange}
-        />
-      )}
+      <CSSTransitionGroup
+        transitionName="cart"
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={300}
+      >
+        {showCart && (
+          <Cart
+            products={cart}
+            total={orderTotal}
+            subBtnHandler={decrementCount}
+            addBtnHandler={incrementCount}
+            onChangeHandler={setCountOnChange}
+          />
+        )}
+      </CSSTransitionGroup>
       <section className="book-container">{booksList}</section>
     </section>
   );

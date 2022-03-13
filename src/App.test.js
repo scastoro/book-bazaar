@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Shop from "./components/Shop";
 import { MemoryRouter } from "react-router-dom";
 import Card from "./components/Card";
+import Cart from "./components/Cart";
 
 const cardProps = {
   title: "foo",
@@ -14,6 +15,25 @@ const cardProps = {
   price: "100",
   id: "1",
 };
+
+const testProducts = [
+  {
+    title: "foo",
+    img: "",
+    count: 1,
+    price: 100,
+    id: "20971bac-1a2b-4c6f-a8b8-d56f43e09495",
+  },
+  {
+    title: "foo",
+    img: "",
+    count: 1,
+    price: 50,
+    id: "1f6f6d97-36e2-4972-b6a1-ff2520e1d491",
+  },
+];
+
+const testTotal = 200;
 
 describe("App component", () => {
   it("should render correctly", () => {
@@ -72,6 +92,18 @@ describe("Shop component", () => {
     userEvent.type(input[0], "{backspace}34");
     expect(input[0].value).toBe("34");
   });
+
+  it("should display correct price when adding product to cart", () => {
+    render(<Shop />);
+    const addToCart = screen.getAllByRole("button", { name: "Add to cart" });
+    const goToCart = screen.getByRole("button", { name: "Go to cart" });
+    userEvent.click(addToCart[1]);
+    userEvent.click(addToCart[1]);
+    userEvent.click(goToCart);
+    const cartTotal = screen.getByText("Order total", { exact: false });
+
+    expect(cartTotal.textContent).toBe("Order total: $50");
+  });
 });
 
 describe("Product Card Component", () => {
@@ -86,24 +118,6 @@ describe("Product Card Component", () => {
       />
     );
     expect(container).toMatchSnapshot();
-  });
-
-  it("should call addBtnHandler", () => {
-    const onClickMock = jest.fn();
-    render(<Card addBtnHandler={onClickMock} />);
-    const addBtn = screen.getByRole("button", { name: "+" });
-    userEvent.click(addBtn);
-
-    expect(onClickMock).toHaveBeenCalledTimes(1);
-  });
-
-  it("should call subBtnHandler", () => {
-    const onClickMock = jest.fn();
-    render(<Card subBtnHandler={onClickMock} />);
-    const subBtn = screen.getByRole("button", { name: "-" });
-    userEvent.click(subBtn);
-
-    expect(onClickMock).toHaveBeenCalledTimes(1);
   });
 
   it("should call addCartBtnHandler", () => {
@@ -134,5 +148,67 @@ describe("Product Card Component", () => {
 
     expect(onChangeMock).toHaveBeenNthCalledWith(1, "1", "1");
     expect(onChangeMock).toHaveBeenNthCalledWith(2, "12", "1");
+  });
+});
+describe("Cart component", () => {
+  it("should render correctly", () => {
+    const { container } = render(
+      <Cart products={testProducts} totalPrice={testTotal} />
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  it("should call addBtnHandler", () => {
+    const onClickMock = jest.fn();
+    render(<Cart products={testProducts} addBtnHandler={onClickMock} />);
+    const addBtn = screen.getAllByRole("button", { name: "+" });
+    userEvent.click(addBtn[0]);
+
+    expect(onClickMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("should call subBtnHandler", () => {
+    const onClickMock = jest.fn();
+    render(<Cart products={testProducts} subBtnHandler={onClickMock} />);
+    const subBtn = screen.getAllByRole("button", { name: "-" });
+    userEvent.click(subBtn[0]);
+
+    expect(onClickMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("should call onChange the correct number of times", () => {
+    const onChangeMock = jest.fn();
+    render(<Cart products={testProducts} onChangeHandler={onChangeMock} />);
+    const input = screen.getAllByRole("spinbutton");
+
+    userEvent.type(input[0], "123");
+
+    expect(onChangeMock).toHaveBeenCalledTimes(3);
+  });
+
+  it("should call onChange with the correct argument(s) on each input", function () {
+    const onChangeMock = jest.fn();
+    render(
+      <Cart
+        id={cardProps.id}
+        products={testProducts}
+        onChangeHandler={onChangeMock}
+      />
+    );
+    const input = screen.getAllByRole("spinbutton");
+
+    userEvent.clear(input[0]);
+    userEvent.type(input[0], "12");
+
+    expect(onChangeMock).toHaveBeenNthCalledWith(
+      1,
+      "",
+      "20971bac-1a2b-4c6f-a8b8-d56f43e09495"
+    );
+    expect(onChangeMock).toHaveBeenNthCalledWith(
+      2,
+      "12",
+      "20971bac-1a2b-4c6f-a8b8-d56f43e09495"
+    );
   });
 });

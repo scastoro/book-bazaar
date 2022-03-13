@@ -31,6 +31,107 @@ exports[`App component should render correctly 1`] = `
 </div>
 `;
 
+exports[`Cart component should render correctly 1`] = `
+<div>
+  <section
+    class="cart"
+  >
+    <h3>
+      Shopping Cart
+    </h3>
+    <section
+      class="cart-items"
+    >
+      <section
+        class="item-list"
+      >
+        <h4
+          class="item-title"
+        >
+          foo
+        </h4>
+        <img
+          alt=""
+          class="item-img"
+          src=""
+        />
+        <label
+          for="count"
+        >
+          Quantity: 
+        </label>
+        <button
+          class="item-sub-btn"
+        >
+          -
+        </button>
+        <input
+          id="count"
+          type="number"
+          value="1"
+        />
+        <button
+          class="item-add-btn"
+        >
+          +
+        </button>
+        <p
+          class="product-total"
+        >
+          $
+          100
+        </p>
+      </section>
+      <section
+        class="item-list"
+      >
+        <h4
+          class="item-title"
+        >
+          foo
+        </h4>
+        <img
+          alt=""
+          class="item-img"
+          src=""
+        />
+        <label
+          for="count"
+        >
+          Quantity: 
+        </label>
+        <button
+          class="item-sub-btn"
+        >
+          -
+        </button>
+        <input
+          id="count"
+          type="number"
+          value="1"
+        />
+        <button
+          class="item-add-btn"
+        >
+          +
+        </button>
+        <p
+          class="product-total"
+        >
+          $
+          50
+        </p>
+      </section>
+    </section>
+    <p
+      class="total"
+    >
+      Order total: $
+    </p>
+  </section>
+</div>
+`;
+
 exports[`Navbar component should render correctly 1`] = `
 Object {
   "asFragment": [Function],
@@ -166,16 +267,6 @@ exports[`Product Card Component should render correctly 1`] = `
       Price:
     </label>
     <button>
-      -
-    </button>
-    <input
-      class="card-price"
-      value="1"
-    />
-    <button>
-      +
-    </button>
-    <button>
       Add to cart
     </button>
   </section>
@@ -194,6 +285,11 @@ exports[`Shop component should render correctly 1`] = `
       Items in Cart: 
       0
     </section>
+    <button
+      class="show-cart"
+    >
+      Go to cart
+    </button>
     <section
       class="book-container"
     >
@@ -220,16 +316,6 @@ exports[`Shop component should render correctly 1`] = `
         >
           Price:
         </label>
-        <button>
-          -
-        </button>
-        <input
-          class="card-price"
-          value="1"
-        />
-        <button>
-          +
-        </button>
         <button>
           Add to cart
         </button>
@@ -258,16 +344,6 @@ exports[`Shop component should render correctly 1`] = `
           Price:
         </label>
         <button>
-          -
-        </button>
-        <input
-          class="card-price"
-          value="1"
-        />
-        <button>
-          +
-        </button>
-        <button>
           Add to cart
         </button>
       </section>
@@ -294,16 +370,6 @@ exports[`Shop component should render correctly 1`] = `
         >
           Price:
         </label>
-        <button>
-          -
-        </button>
-        <input
-          class="card-price"
-          value="1"
-        />
-        <button>
-          +
-        </button>
         <button>
           Add to cart
         </button>
@@ -332,16 +398,6 @@ exports[`Shop component should render correctly 1`] = `
           Price:
         </label>
         <button>
-          -
-        </button>
-        <input
-          class="card-price"
-          value="1"
-        />
-        <button>
-          +
-        </button>
-        <button>
           Add to cart
         </button>
       </section>
@@ -369,16 +425,6 @@ exports[`Shop component should render correctly 1`] = `
           Price:
         </label>
         <button>
-          -
-        </button>
-        <input
-          class="card-price"
-          value="1"
-        />
-        <button>
-          +
-        </button>
-        <button>
           Add to cart
         </button>
       </section>
@@ -405,16 +451,6 @@ exports[`Shop component should render correctly 1`] = `
         >
           Price:
         </label>
-        <button>
-          -
-        </button>
-        <input
-          class="card-price"
-          value="1"
-        />
-        <button>
-          +
-        </button>
         <button>
           Add to cart
         </button>

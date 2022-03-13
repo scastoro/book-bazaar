@@ -1,10 +1,24 @@
-import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const [style, setStyle] = useState({});
+
+  let location = useLocation();
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setStyle({
+        background: "rgba(3,3,3,0)",
+      });
+    } else if (location.pathname === "/shop") {
+      setStyle({
+        background: "rgba(3,3,3,1)",
+      });
+    }
+  }, [location]);
   return (
     <>
-      <header>
+      <header style={style}>
         <img className="logo" src="#" alt="" />
         <nav className="nav">
           <Link className="text-link" to="/">

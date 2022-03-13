@@ -2,7 +2,9 @@
 
 exports[`App component should render correctly 1`] = `
 <div>
-  <header>
+  <header
+    style="background: rgba(3, 3, 3, 0);"
+  >
     <img
       alt=""
       class="logo"
@@ -148,7 +150,9 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <header>
+      <header
+        style="background: rgba(3, 3, 3, 0);"
+      >
         <img
           alt=""
           class="logo"
@@ -174,7 +178,9 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <header>
+    <header
+      style="background: rgba(3, 3, 3, 0);"
+    >
       <img
         alt=""
         class="logo"

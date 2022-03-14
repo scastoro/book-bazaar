@@ -128,9 +128,11 @@ const Shop = () => {
 
   return (
     <section className="shop">
-      <section role="status" className="cart-status">
-        Items in Cart: {cartTotal}
-        <button className="show-cart" onClick={showCartHandler}>
+      <section className="cart-status">
+        <section role="status" className="cart-total">
+          Items in Cart: {cartTotal}
+        </section>
+        <button className="btn show-cart" onClick={showCartHandler}>
           Go to cart
         </button>
       </section>

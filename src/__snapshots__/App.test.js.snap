@@ -94,7 +94,9 @@ exports[`Cart component should render correctly 1`] = `
     class="cart"
     role="dialog"
   >
-    <h3>
+    <h3
+      class="cart-title"
+    >
       Shopping Cart
     </h3>
     <section
@@ -127,7 +129,9 @@ exports[`Cart component should render correctly 1`] = `
             -
           </button>
           <input
+            class="item-input"
             id="count"
+            min="0"
             type="number"
             value="1"
           />
@@ -171,7 +175,9 @@ exports[`Cart component should render correctly 1`] = `
             -
           </button>
           <input
+            class="item-input"
             id="count"
+            min="0"
             type="number"
             value="1"
           />
@@ -189,21 +195,28 @@ exports[`Cart component should render correctly 1`] = `
         </p>
       </section>
     </section>
+    <section
+      class="h-rule"
+    />
     <p
       class="total"
     >
       Order total: $
     </p>
-    <button
-      class="checkout-btn"
+    <section
+      class="cart-btns"
     >
-      Checkout
-    </button>
-    <button
-      class="close-btn"
-    >
-      Close
-    </button>
+      <button
+        class="btn checkout-btn"
+      >
+        Checkout
+      </button>
+      <button
+        class="btn close-btn"
+      >
+        Close
+      </button>
+    </section>
   </section>
 </div>
 `;
@@ -378,12 +391,16 @@ exports[`Shop component should render correctly 1`] = `
   >
     <section
       class="cart-status"
-      role="status"
     >
-      Items in Cart: 
-      0
+      <section
+        class="cart-total"
+        role="status"
+      >
+        Items in Cart: 
+        0
+      </section>
       <button
-        class="show-cart"
+        class="btn show-cart"
       >
         Go to cart
       </button>
@@ -435,7 +452,7 @@ exports[`Shop component should render correctly 1`] = `
         <img
           alt="test book 2"
           class="card-image"
-          src=""
+          src="https://images.unsplash.com/photo-1629992101753-56d196c8aabb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1590&q=80"
         />
         <h3
           class="card-heading"
@@ -472,7 +489,7 @@ exports[`Shop component should render correctly 1`] = `
         <img
           alt="test book 3"
           class="card-image"
-          src=""
+          src="https://images.unsplash.com/photo-1629992101753-56d196c8aabb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1590&q=80"
         />
         <h3
           class="card-heading"
@@ -509,7 +526,7 @@ exports[`Shop component should render correctly 1`] = `
         <img
           alt="test book 4"
           class="card-image"
-          src=""
+          src="https://images.unsplash.com/photo-1629992101753-56d196c8aabb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1590&q=80"
         />
         <h3
           class="card-heading"
@@ -546,7 +563,7 @@ exports[`Shop component should render correctly 1`] = `
         <img
           alt="test book 5"
           class="card-image"
-          src=""
+          src="https://images.unsplash.com/photo-1629992101753-56d196c8aabb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1590&q=80"
         />
         <h3
           class="card-heading"
@@ -583,7 +600,7 @@ exports[`Shop component should render correctly 1`] = `
         <img
           alt="test book 6"
           class="card-image"
-          src=""
+          src="https://images.unsplash.com/photo-1629992101753-56d196c8aabb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1590&q=80"
         />
         <h3
           class="card-heading"

@@ -1,3 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+/* Universal Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+}
+/* Header styling */
+header {
+  color: #fff;
+  width: 100%;
+  padding: 2rem 5rem;
+  position: absolute;
+}
+.navbar-container {
+  display: flex;
+}
+.nav {
+  margin-left: auto;
+}
+.nav a {
+  margin-left: 5rem;
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+  font-weight: 700;
+}
+.nav a:hover {
+  border-bottom: 0.2rem solid #fff;
+}
+/* Main styling */
+main {
+  color: #fff;
+  overflow: visible;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)),
+    url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2190&q=80");
+}
+.home-container {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-title {
+  font-size: 5.5rem;
+  font-weight: 900;
+  width: 60rem;
+  margin-bottom: 7rem;
+}
+.main-btn {
+  cursor: pointer;
+  background: rgba(3, 3, 3, 1);
+  box-shadow: 0px 0px 7px rgba(255, 255, 255, 0.48);
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 2rem;
+  color: #fff;
+  border: none;
+  padding: 2rem 2.5rem;
+}
+.main-btn:hover {
+  background-color: #3d3b3b;
+}
+/* More info section styling */
+.more-info {
+  color: #030303;
+  display: flex;
+  background-color: #e3e1dc;
+  padding: 7rem 5rem;
+  justify-content: center;
+  align-items: center;
+}
+.books {
+  width: 40%;
+  border-radius: 1rem;
+  margin-right: 4rem;
+}
+.more-info-heading {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+.more-info-para {
+  font-size: 2.3rem;
+  width: 65%;
+  font-weight: 600;
+}
+/* Footer styling */
+footer {
+  height: 6rem;
+  background-color: #030303;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.75rem;
+}
+.footer-link {
+  border-bottom: 1px solid #fff;
+}
+/* Cart CSSTransitionGroup Styling */
 .cart-enter {
   opacity: 0.01;
   transform: translateX(100%);

@@ -19,15 +19,17 @@ const Navbar = () => {
   return (
     <>
       <header style={style}>
-        <img className="logo" src="#" alt="" />
-        <nav className="nav">
-          <Link className="text-link" to="/">
-            Home
-          </Link>
-          <Link className="text-link" to="/shop">
-            Shop
-          </Link>
-        </nav>
+        <section className="navbar-container">
+          <h2 className="title">Boundless Book Bazaar</h2>
+          <nav className="nav">
+            <Link className="text-link" to="/">
+              Home
+            </Link>
+            <Link className="text-link" to="/shop">
+              Shop
+            </Link>
+          </nav>
+        </section>
       </header>
       <Outlet />
     </>

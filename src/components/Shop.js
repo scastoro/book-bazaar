@@ -128,12 +128,12 @@ const Shop = () => {
 
   return (
     <section className="shop">
-      <section role="status" className="cart">
+      <section role="status" className="cart-status">
         Items in Cart: {cartTotal}
+        <button className="show-cart" onClick={showCartHandler}>
+          Go to cart
+        </button>
       </section>
-      <button className="show-cart" onClick={showCartHandler}>
-        Go to cart
-      </button>
       <CSSTransitionGroup
         transitionName="cart"
         transitionEnterTimeout={500}

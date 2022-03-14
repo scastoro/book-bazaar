@@ -11,20 +11,22 @@ const Card = ({
 }) => {
   return (
     <section key={id} className="card">
+      <img className="card-image" src={img} alt={title} />
       <h3 className="card-heading">{title}</h3>
-      <img className="card image" src={img} alt={title} />
-      <p className="card-price">{price}</p>
       <label className="card-label" htmlFor="quantity">
         Quantity:
+        <input
+          type="number"
+          id="quantity"
+          className="card-input"
+          value={count}
+          onChange={(e) => onChangeHandler(e.target.value, id)}
+        />
       </label>
-      <input
-        type="number"
-        id="quantity"
-        className="card-input"
-        value={count}
-        onChange={(e) => onChangeHandler(e.target.value, id)}
-      />
-      <button onClick={() => addCartBtnHandler(id)}>Add to cart</button>
+      <p className="card-price">${price}</p>
+      <button className="card-btn" onClick={() => addCartBtnHandler(id)}>
+        Add to cart
+      </button>
     </section>
   );
 };

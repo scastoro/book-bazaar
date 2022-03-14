@@ -40,11 +40,12 @@ exports[`App component should render correctly 1`] = `
       >
         The #1 Destination for all your Reading Needs
       </h1>
-      <button
+      <a
         class="main-btn"
+        href="/shop"
       >
         Shop Now
-      </button>
+      </a>
     </section>
     <section
       class="more-info"
@@ -112,26 +113,30 @@ exports[`Cart component should render correctly 1`] = `
           class="item-img"
           src=""
         />
-        <label
-          for="count"
+        <section
+          class="item-info"
         >
-          Quantity: 
-        </label>
-        <button
-          class="item-sub-btn"
-        >
-          -
-        </button>
-        <input
-          id="count"
-          type="number"
-          value="1"
-        />
-        <button
-          class="item-add-btn"
-        >
-          +
-        </button>
+          <label
+            for="count"
+          >
+            Quantity: 
+          </label>
+          <button
+            class="item-sub-btn"
+          >
+            -
+          </button>
+          <input
+            id="count"
+            type="number"
+            value="1"
+          />
+          <button
+            class="item-add-btn"
+          >
+            +
+          </button>
+        </section>
         <p
           class="product-total"
         >
@@ -152,26 +157,30 @@ exports[`Cart component should render correctly 1`] = `
           class="item-img"
           src=""
         />
-        <label
-          for="count"
+        <section
+          class="item-info"
         >
-          Quantity: 
-        </label>
-        <button
-          class="item-sub-btn"
-        >
-          -
-        </button>
-        <input
-          id="count"
-          type="number"
-          value="1"
-        />
-        <button
-          class="item-add-btn"
-        >
-          +
-        </button>
+          <label
+            for="count"
+          >
+            Quantity: 
+          </label>
+          <button
+            class="item-sub-btn"
+          >
+            -
+          </button>
+          <input
+            id="count"
+            type="number"
+            value="1"
+          />
+          <button
+            class="item-add-btn"
+          >
+            +
+          </button>
+        </section>
         <p
           class="product-total"
         >
@@ -325,34 +334,37 @@ exports[`Product Card Component should render correctly 1`] = `
   <section
     class="card"
   >
+    <img
+      alt="foo"
+      class="card-image"
+      src=""
+    />
     <h3
       class="card-heading"
     >
       foo
     </h3>
-    <img
-      alt="foo"
-      class="card image"
-      src=""
-    />
-    <p
-      class="card-price"
-    >
-      100
-    </p>
     <label
       class="card-label"
       for="quantity"
     >
       Quantity:
+      <input
+        class="card-input"
+        id="quantity"
+        type="number"
+        value="1"
+      />
     </label>
-    <input
-      class="card-input"
-      id="quantity"
-      type="number"
-      value="1"
-    />
-    <button>
+    <p
+      class="card-price"
+    >
+      $
+      100
+    </p>
+    <button
+      class="card-btn"
+    >
       Add to cart
     </button>
   </section>
@@ -365,17 +377,17 @@ exports[`Shop component should render correctly 1`] = `
     class="shop"
   >
     <section
-      class="cart"
+      class="cart-status"
       role="status"
     >
       Items in Cart: 
       0
+      <button
+        class="show-cart"
+      >
+        Go to cart
+      </button>
     </section>
-    <button
-      class="show-cart"
-    >
-      Go to cart
-    </button>
     <span />
     <section
       class="book-container"
@@ -383,204 +395,222 @@ exports[`Shop component should render correctly 1`] = `
       <section
         class="card"
       >
+        <img
+          alt="test book 1"
+          class="card-image"
+          src="https://images.unsplash.com/photo-1629992101753-56d196c8aabb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1590&q=80"
+        />
         <h3
           class="card-heading"
         >
           test book 1
         </h3>
-        <img
-          alt="test book 1"
-          class="card image"
-          src=""
-        />
-        <p
-          class="card-price"
-        >
-          25
-        </p>
         <label
           class="card-label"
           for="quantity"
         >
           Quantity:
+          <input
+            class="card-input"
+            id="quantity"
+            type="number"
+            value="1"
+          />
         </label>
-        <input
-          class="card-input"
-          id="quantity"
-          type="number"
-          value="1"
-        />
-        <button>
+        <p
+          class="card-price"
+        >
+          $
+          25
+        </p>
+        <button
+          class="card-btn"
+        >
           Add to cart
         </button>
       </section>
       <section
         class="card"
       >
+        <img
+          alt="test book 2"
+          class="card-image"
+          src=""
+        />
         <h3
           class="card-heading"
         >
           test book 2
         </h3>
-        <img
-          alt="test book 2"
-          class="card image"
-          src=""
-        />
-        <p
-          class="card-price"
-        >
-          25
-        </p>
         <label
           class="card-label"
           for="quantity"
         >
           Quantity:
+          <input
+            class="card-input"
+            id="quantity"
+            type="number"
+            value="1"
+          />
         </label>
-        <input
-          class="card-input"
-          id="quantity"
-          type="number"
-          value="1"
-        />
-        <button>
+        <p
+          class="card-price"
+        >
+          $
+          25
+        </p>
+        <button
+          class="card-btn"
+        >
           Add to cart
         </button>
       </section>
       <section
         class="card"
       >
+        <img
+          alt="test book 3"
+          class="card-image"
+          src=""
+        />
         <h3
           class="card-heading"
         >
           test book 3
         </h3>
-        <img
-          alt="test book 3"
-          class="card image"
-          src=""
-        />
-        <p
-          class="card-price"
-        >
-          25
-        </p>
         <label
           class="card-label"
           for="quantity"
         >
           Quantity:
+          <input
+            class="card-input"
+            id="quantity"
+            type="number"
+            value="1"
+          />
         </label>
-        <input
-          class="card-input"
-          id="quantity"
-          type="number"
-          value="1"
-        />
-        <button>
+        <p
+          class="card-price"
+        >
+          $
+          25
+        </p>
+        <button
+          class="card-btn"
+        >
           Add to cart
         </button>
       </section>
       <section
         class="card"
       >
+        <img
+          alt="test book 4"
+          class="card-image"
+          src=""
+        />
         <h3
           class="card-heading"
         >
           test book 4
         </h3>
-        <img
-          alt="test book 4"
-          class="card image"
-          src=""
-        />
-        <p
-          class="card-price"
-        >
-          25
-        </p>
         <label
           class="card-label"
           for="quantity"
         >
           Quantity:
+          <input
+            class="card-input"
+            id="quantity"
+            type="number"
+            value="1"
+          />
         </label>
-        <input
-          class="card-input"
-          id="quantity"
-          type="number"
-          value="1"
-        />
-        <button>
+        <p
+          class="card-price"
+        >
+          $
+          25
+        </p>
+        <button
+          class="card-btn"
+        >
           Add to cart
         </button>
       </section>
       <section
         class="card"
       >
+        <img
+          alt="test book 5"
+          class="card-image"
+          src=""
+        />
         <h3
           class="card-heading"
         >
           test book 5
         </h3>
-        <img
-          alt="test book 5"
-          class="card image"
-          src=""
-        />
-        <p
-          class="card-price"
-        >
-          25
-        </p>
         <label
           class="card-label"
           for="quantity"
         >
           Quantity:
+          <input
+            class="card-input"
+            id="quantity"
+            type="number"
+            value="1"
+          />
         </label>
-        <input
-          class="card-input"
-          id="quantity"
-          type="number"
-          value="1"
-        />
-        <button>
+        <p
+          class="card-price"
+        >
+          $
+          25
+        </p>
+        <button
+          class="card-btn"
+        >
           Add to cart
         </button>
       </section>
       <section
         class="card"
       >
+        <img
+          alt="test book 6"
+          class="card-image"
+          src=""
+        />
         <h3
           class="card-heading"
         >
           test book 6
         </h3>
-        <img
-          alt="test book 6"
-          class="card image"
-          src=""
-        />
-        <p
-          class="card-price"
-        >
-          25
-        </p>
         <label
           class="card-label"
           for="quantity"
         >
           Quantity:
+          <input
+            class="card-input"
+            id="quantity"
+            type="number"
+            value="1"
+          />
         </label>
-        <input
-          class="card-input"
-          id="quantity"
-          type="number"
-          value="1"
-        />
-        <button>
+        <p
+          class="card-price"
+        >
+          $
+          25
+        </p>
+        <button
+          class="card-btn"
+        >
           Add to cart
         </button>
       </section>

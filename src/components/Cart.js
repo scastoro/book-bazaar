@@ -12,25 +12,29 @@ const Cart = ({
     <section key={product.id} className="item-list">
       <h4 className="item-title">{product.title}</h4>
       <img className="item-img" src={product.img} alt="" />
-      <label htmlFor="count">Quantity: </label>
-      <button
-        className="item-sub-btn"
-        onClick={() => subBtnHandler(product.id)}
-      >
-        -
-      </button>
-      <input
-        type="number"
-        id="count"
-        value={product.count}
-        onChange={(e) => onChangeHandler(e.target.value, product.id)}
-      />
-      <button
-        className="item-add-btn"
-        onClick={() => addBtnHandler(product.id)}
-      >
-        +
-      </button>
+      <section className="item-info">
+        <label htmlFor="count">Quantity: </label>
+        <button
+          className="item-sub-btn"
+          onClick={() => subBtnHandler(product.id)}
+        >
+          -
+        </button>
+        <input
+          type="number"
+          id="count"
+          min={0}
+          className="item-input"
+          value={product.count}
+          onChange={(e) => onChangeHandler(e.target.value, product.id)}
+        />
+        <button
+          className="item-add-btn"
+          onClick={() => addBtnHandler(product.id)}
+        >
+          +
+        </button>
+      </section>
       <p className="product-total">
         {"$"}
         {+product.price * +product.count}
@@ -40,13 +44,16 @@ const Cart = ({
 
   return (
     <section role="dialog" className="cart">
-      <h3>Shopping Cart</h3>
+      <h3 className="cart-title">Shopping Cart</h3>
       <section className="cart-items">{productsList}</section>
+      <section className="h-rule"></section>
       <p className="total">Order total: ${total}</p>
-      <button className="checkout-btn">Checkout</button>
-      <button className="close-btn" onClick={toggleCartHandler}>
-        Close
-      </button>
+      <section className="cart-btns">
+        <button className="btn checkout-btn">Checkout</button>
+        <button className="btn close-btn" onClick={toggleCartHandler}>
+          Close
+        </button>
+      </section>
     </section>
   );
 };

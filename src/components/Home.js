@@ -1,13 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Home = (props) => {
+const Home = () => {
   return (
     <main>
       <section className="home-container">
         <h1 className="main-title">
           The #1 Destination for all your Reading Needs
         </h1>
-        <button className="main-btn">Shop Now</button>
+        <Link className="main-btn" to="/shop">
+          Shop Now
+        </Link>
       </section>
       <section className="more-info">
         <img
